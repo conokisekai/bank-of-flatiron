@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 const TransactionForm = ({ onFormSubmit }) => {
   const [formData, setFormData] = useState({
+    date: '',
     description: '',
     amount: '',
-    category: ''
+    category: '',
+    id: null 
   });
 
   const handleInputChange = event => {
@@ -17,17 +19,26 @@ const TransactionForm = ({ onFormSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onFormSubmit(formData);
-    // Reset form fields
+    const id = formData.id || Date.now();
+    onFormSubmit({ ...formData, id });
     setFormData({
+      date: '',
       description: '',
       amount: '',
-      category: ''
+      category: '',
+      id: null 
     });
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="date"
+        placeholder="Date"
+        value={formData.date}
+        onChange={handleInputChange}
+      />
       <input
         type="text"
         name="description"
@@ -55,3 +66,4 @@ const TransactionForm = ({ onFormSubmit }) => {
 };
 
 export default TransactionForm;
+
