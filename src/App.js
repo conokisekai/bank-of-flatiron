@@ -43,7 +43,11 @@ const App = () => {
     .sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
 
   return (
-    <div className="App">
+    <div className="App"
+    style={{
+      minHeight: '100vh',
+      minWidth: '50vw',
+    }}>
       <h1>Bank of Flatiron</h1>
       <TransactionForm onFormSubmit={addTransaction} />
       <SearchBar onSearch={handleSearch} />

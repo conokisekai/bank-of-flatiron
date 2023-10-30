@@ -7,7 +7,8 @@ const TransactionTable = ({ transactions, sortBy, onDelete, onSortChange }) => {
 
   return (
     <div>
-      <label>Sort By:</label>
+      <label
+      style={{color: 'white'}}>Sort By:</label>
       <select value={sortBy} onChange={(e) => onSortChange(e.target.value)}>
         <option value="description">Description</option>
         <option value="category">Category</option>
@@ -30,7 +31,12 @@ const TransactionTable = ({ transactions, sortBy, onDelete, onSortChange }) => {
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.category}</td>
-              <td>
+              <td
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
                 <button onClick={() => onDelete(transaction.id)}>Delete</button>
               </td>
             </tr>
