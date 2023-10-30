@@ -17,7 +17,7 @@ const TransactionTable = ({ transactions, sortBy, onDelete }) => {
         </tr>
       </thead>
       <tbody>
-        {sortedTransactions.map(transaction => (
+        {sortedTransactions.map((transaction) => (
           <tr key={transaction.id}>
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>
@@ -34,4 +34,3 @@ const TransactionTable = ({ transactions, sortBy, onDelete }) => {
 };
 
 export default TransactionTable;
-

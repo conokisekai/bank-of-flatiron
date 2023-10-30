@@ -6,18 +6,18 @@ const TransactionForm = ({ onFormSubmit }) => {
     description: '',
     amount: '',
     category: '',
-    id: null 
+    id: null,
   });
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const id = formData.id || Date.now();
     onFormSubmit({ ...formData, id });
@@ -26,7 +26,7 @@ const TransactionForm = ({ onFormSubmit }) => {
       description: '',
       amount: '',
       category: '',
-      id: null 
+      id: null,
     });
   };
 
@@ -66,4 +66,3 @@ const TransactionForm = ({ onFormSubmit }) => {
 };
 
 export default TransactionForm;
-
