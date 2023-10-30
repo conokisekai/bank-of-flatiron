@@ -6,19 +6,19 @@ import SearchBar from './SearchBar';
 const App = () => {
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  console.log(setTransactions);
 
   useEffect(() => {
     // Fetch transaction data from the API endpoint
     fetch('http://localhost:3000/transactions')
-      .then(response => response.json())
-      .then(data => setTransactions(data))
+      .then((response) => response.json())
+      .then((data) => {setTransactions(data);
+      })
       .catch(error => console.error('Error fetching data:', error));
-  }, []); // Empty dependency array ensures the effect runs once after the initial render
+  }, []); 
 
   const addTransaction = newTransaction => {
-    // Add the new transaction to the transactions state
     setTransactions([...transactions, newTransaction]);
-    // In a real application, you might also want to send the new transaction to the API
   };
 
   const handleSearch = term => {
