@@ -6,9 +6,10 @@ import SearchBar from './SearchBar';
 const App = () => {
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('category'); 
 
   useEffect(() => {
-    fetch('http://localhost:3000/transactions')
+    fetch('http://localhost:3000/transactions') 
       .then((response) => response.json())
       .then((data) => {
         setTransactions(data);
@@ -31,9 +32,15 @@ const App = () => {
     setSearchTerm(term);
   };
 
-  const filteredTransactions = transactions.filter((transaction) =>
-    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSortChange = (property) => {
+    setSortBy(property);
+  };
+
+  const filteredTransactions = transactions
+    .filter((transaction) =>
+      transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
 
   return (
     <div className="App">
@@ -42,8 +49,9 @@ const App = () => {
       <SearchBar onSearch={handleSearch} />
       <TransactionTable
         transactions={filteredTransactions}
-        sortBy="category"
+        sortBy={sortBy} 
         onDelete={deleteTransaction}
+        onSortChange={handleSortChange} 
       />
     </div>
   );
