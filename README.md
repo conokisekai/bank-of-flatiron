@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Bank of Flatiron - React Transaction Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React web application designed to help users manage their bank transactions. The goal of this project was to practice building React components, managing state, handling events, and fetching data from a local server. This README provides an overview of the project, including its features, setup instructions, and guidelines.
 
-## Available Scripts
+## Author
 
-In the project directory, you can run:
+Conrad Kambi
+https://github.com/conokisekai
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In this application, users can:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **View Transactions:** See a table displaying their recent bank transactions.
+- **Add Transactions:** Fill out and submit a form to add new transactions to the table. Note that the new transactions are not persisted to the backend server.
+- **Filter Transactions:** Filter transactions by typing into the search bar. Only transactions with descriptions matching the search term are displayed.
 
-### `npm test`
+## Project Setup & Data Fetching
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up the project:
 
-### `npm run build`
+1. **Create a Project Folder:** Create a new project folder on your local machine.
+2. **Create a GitHub Repository:** Create a private GitHub repository for your project. Add your TM as a contributor for grading purposes.
+3. **Add Database Configuration:** In your project directory, create a `db.json` file with the necessary data for your server DB. Use this data for your JSON DB server.
+4. **Start Backend Server:** Run `json-server --watch db.json` to start the local server. Test the server by visiting `http://localhost:8001/transactions` in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Core Deliverables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Transaction Table:**
+  - A table displays all transactions fetched from the server.
+  
+- **Transaction Form:**
+  - Users can fill out and submit the form to add new transactions. The new transactions are added to the table, although they are not persisted to the backend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Transaction Filtering:**
+  - Users can filter transactions by typing into the search bar. Only transactions with descriptions matching the search term are shown in the table.
 
-### `npm run eject`
+## Bonus Deliverables
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In addition to the core features, users can:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Sort Transactions:** Transactions can be sorted alphabetically by category or description.
+  
+- **Delete Transactions:** Users can delete a transaction, which removes it from the table.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Development Process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To work on the project:
 
-## Learn More
+- **Clone the Repository:** Clone the project repository to your local machine.
+- **Install Dependencies:** Run `npm install` to install project dependencies.
+- **Start Development Server:** Run `npm start` to start the development server. The application will be running at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# LICENCE
+This is free and unencumbered software released into the public domain.
 
-### Code Splitting
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
 
-### Analyzing the Bundle Size
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more information, please refer to <https://unlicense.org>
